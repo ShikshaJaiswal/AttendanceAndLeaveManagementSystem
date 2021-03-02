@@ -61,7 +61,7 @@ namespace AttendanceManagementSystem.PresentationLayer
                                     AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.DeleteProject();
                                     break;
                                 case '3':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.EditProjectDetails();
+                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.UpdateProject();
                                     break;
                             }
                             Console.WriteLine("Continue editing Project Details (y/n)?");
