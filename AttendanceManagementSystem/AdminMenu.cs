@@ -31,6 +31,7 @@ namespace AttendanceManagementSystem.PresentationLayer
                             switch (EmpOption)
                             {
                                 case '1':
+                                                                         
                                     AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.AddEmployee();
                                     break;
                                 case '2':

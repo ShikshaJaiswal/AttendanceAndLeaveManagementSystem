@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttendanceManagementSystem.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttendanceManagementSystem.DataAccessLayer", "AttendanceManagementSystem.DataAccessLayer\AttendanceManagementSystem.DataAccessLayer.csproj", "{2BF98F22-7835-4346-A174-D50FF502A4ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceManagementSystem.Exceptions", "AttendanceManagementSystem.Exceptions\AttendanceManagementSystem.Exceptions.csproj", "{32BF017E-6CC8-47E4-93E6-5B7537F15E6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttendanceManagementSystem.Exceptions", "AttendanceManagementSystem.Exceptions\AttendanceManagementSystem.Exceptions.csproj", "{32BF017E-6CC8-47E4-93E6-5B7537F15E6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

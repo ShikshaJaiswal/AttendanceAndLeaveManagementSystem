@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj": {}
+    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj": {
+    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj",
         "projectName": "AttendanceManagementSystem.BusinessLayer",
-        "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -32,8 +32,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj"
+              "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj"
               }
             }
           }
@@ -47,6 +47,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -66,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {
+    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
         "projectName": "AttendanceManagementSystem.DataAccessLayer",
-        "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -130,14 +136,14 @@
         }
       }
     },
-    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj": {
+    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj",
         "projectName": "AttendanceManagementSystem.Exceptions",
-        "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj",
+        "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.Exceptions\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.Exceptions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -158,11 +164,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj"
+              "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.BusinessLayer\\AttendanceManagementSystem.BusinessLayer.csproj"
               },
-              "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj"
+              "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8Y7cAivuaAJT0TLShPRKVvfPWdnkjuuuXhOw8VL3P1UjbH3imKK4odlaiDf39LxKHJ9crSnaX7k0ODYgChksJA==",
+  "dgSpecHash": "k6U+6Qb49B3ITIfTVxdfbCJrrKl58UHdqvYyn+5vhaEuqj5FvMgtZkFJLNoYtiRfl/KEuc/CrnV4L8MsbLtNkA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
+  "projectFilePath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

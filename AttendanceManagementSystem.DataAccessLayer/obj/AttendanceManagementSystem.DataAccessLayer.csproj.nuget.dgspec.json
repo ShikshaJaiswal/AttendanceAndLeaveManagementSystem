@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {}
+    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {
+    "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
         "projectName": "AttendanceManagementSystem.DataAccessLayer",
-        "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolution\\AttendanceManagementSystem.DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

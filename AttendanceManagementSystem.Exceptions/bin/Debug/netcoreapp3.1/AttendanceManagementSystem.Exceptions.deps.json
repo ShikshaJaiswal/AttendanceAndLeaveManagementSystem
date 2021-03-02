@@ -92,7 +92,8 @@
       "System.Security.Principal.Windows/4.7.0": {},
       "AttendanceManagementSystem.BusinessLayer/1.0.0": {
         "dependencies": {
-          "AttendanceManagementSystem.DataAccessLayer": "1.0.0"
+          "AttendanceManagementSystem.DataAccessLayer": "1.0.0",
+          "System.Data.SqlClient": "4.8.2"
         },
         "runtime": {
           "AttendanceManagementSystem.BusinessLayer.dll": {}
