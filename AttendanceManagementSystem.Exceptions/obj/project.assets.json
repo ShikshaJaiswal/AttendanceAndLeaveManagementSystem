@@ -149,6 +149,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "AttendanceManagementSystem.EntityLayer": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
         },
         "compile": {
@@ -156,6 +157,16 @@
         },
         "runtime": {
           "bin/placeholder/AttendanceManagementSystem.DataAccessLayer.dll": {}
+        }
+      },
+      "AttendanceManagementSystem.EntityLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/AttendanceManagementSystem.EntityLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AttendanceManagementSystem.EntityLayer.dll": {}
         }
       }
     }
@@ -483,6 +494,11 @@
       "type": "project",
       "path": "../AttendanceManagementSystem.DataAccessLayer/AttendanceManagementSystem.DataAccessLayer.csproj",
       "msbuildProject": "../AttendanceManagementSystem.DataAccessLayer/AttendanceManagementSystem.DataAccessLayer.csproj"
+    },
+    "AttendanceManagementSystem.EntityLayer/1.0.0": {
+      "type": "project",
+      "path": "../AttendanceManagementSystem.EntityLayer/AttendanceManagementSystem.EntityLayer.csproj",
+      "msbuildProject": "../AttendanceManagementSystem.EntityLayer/AttendanceManagementSystem.EntityLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {

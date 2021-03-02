@@ -26,3 +26,5 @@ C:\Users\hp\Desktop\major project\AttendanceAndLeaveManagementSystem\AttendanceM
 C:\Users\hp\Desktop\major project\AttendanceAndLeaveManagementSystem\AttendanceManagementSystemSolutions\AttendanceManagementSystem.Exceptions\obj\Debug\netcoreapp3.1\AttendanceManagementSystem.Exceptions.csproj.CopyComplete
 C:\Users\hp\Desktop\major project\AttendanceAndLeaveManagementSystem\AttendanceManagementSystemSolutions\AttendanceManagementSystem.Exceptions\obj\Debug\netcoreapp3.1\AttendanceManagementSystem.Exceptions.dll
 C:\Users\hp\Desktop\major project\AttendanceAndLeaveManagementSystem\AttendanceManagementSystemSolutions\AttendanceManagementSystem.Exceptions\obj\Debug\netcoreapp3.1\AttendanceManagementSystem.Exceptions.pdb
+C:\Users\hp\Desktop\major project\AttendanceAndLeaveManagementSystem\AttendanceManagementSystemSolutions\AttendanceManagementSystem.Exceptions\bin\Debug\netcoreapp3.1\AttendanceManagementSystem.EntityLayer.dll
+C:\Users\hp\Desktop\major project\AttendanceAndLeaveManagementSystem\AttendanceManagementSystemSolutions\AttendanceManagementSystem.Exceptions\bin\Debug\netcoreapp3.1\AttendanceManagementSystem.EntityLayer.pdb

@@ -2,13 +2,38 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using AttendanceManagementSystem.EntityLayer;
 
 
 
 namespace AttendanceManagementSystem.PresentationLayer
 {
+
     class AdminMenu
     {
+
+        public static AddEmployee_EL AddEmployeeInput()
+        {
+            Console.WriteLine("Enter EmpId, EmpName, EmpDesignation, EmpDOB, EmpAddress, MgrId, ProjectId to add record:");
+            AddEmployee_EL ae = new AddEmployee_EL();
+            ae.EmpId = Console.ReadLine();
+            ae.EmpName = Console.ReadLine();
+            ae.EmpDesignation = Console.ReadLine();
+            ae.EpmDOB = DateTime.Parse(Console.ReadLine());
+            ae.EmpAddress = Console.ReadLine();     
+            ae.MgrId = Console.ReadLine();
+            ae.ProjectId = Console.ReadLine();
+            return ae;
+
+        }
+        public static DelEmployee_EL DelEmployeeInput()
+        {
+            Console.WriteLine("Enter EmpId to delete record:");
+            DelEmployee_EL de = new DelEmployee_EL();
+            de.EmpId = Console.ReadLine();
+            return de;
+        }
+        
         public static void DisplayMenu()
         {
             char ans = 'y';
@@ -32,10 +57,10 @@ namespace AttendanceManagementSystem.PresentationLayer
                             {
                                 case '1':
                                                                          
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.AddEmployee();
+                                    AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.AddEmployee(AddEmployeeInput());
                                     break;
                                 case '2':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.DeleteEmployee();
+                                    AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.DeleteEmployee(DelEmployeeInput());
                                     break;
                                 case '3':
                                     AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.UpdateEmployee();

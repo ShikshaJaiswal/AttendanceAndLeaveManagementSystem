@@ -10,6 +10,7 @@
         "dependencies": {
           "AttendanceManagementSystem.BusinessLayer": "1.0.0",
           "AttendanceManagementSystem.DataAccessLayer": "1.0.0",
+          "AttendanceManagementSystem.EntityLayer": "1.0.0",
           "AttendanceManagementSystem.Exceptions": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
         },
@@ -103,10 +104,16 @@
       },
       "AttendanceManagementSystem.DataAccessLayer/1.0.0": {
         "dependencies": {
+          "AttendanceManagementSystem.EntityLayer": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
         },
         "runtime": {
           "AttendanceManagementSystem.DataAccessLayer.dll": {}
+        }
+      },
+      "AttendanceManagementSystem.EntityLayer/1.0.0": {
+        "runtime": {
+          "AttendanceManagementSystem.EntityLayer.dll": {}
         }
       },
       "AttendanceManagementSystem.Exceptions/1.0.0": {
@@ -195,6 +202,11 @@
       "sha512": ""
     },
     "AttendanceManagementSystem.DataAccessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AttendanceManagementSystem.EntityLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

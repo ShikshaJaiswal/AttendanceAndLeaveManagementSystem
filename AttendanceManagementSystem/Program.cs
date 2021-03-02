@@ -9,8 +9,6 @@ namespace AttendanceManagementSystem.PresentationLayer
     class Program
     {
         
-
-
         static void Main(string[] args)
         {
             AttendanceManagementSystem.PresentationLayer.AdminOrEmployee.AskAdminOrEmployee();

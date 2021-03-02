@@ -149,6 +149,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "AttendanceManagementSystem.EntityLayer": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
         },
         "compile": {
@@ -156,6 +157,16 @@
         },
         "runtime": {
           "bin/placeholder/AttendanceManagementSystem.DataAccessLayer.dll": {}
+        }
+      },
+      "AttendanceManagementSystem.EntityLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/AttendanceManagementSystem.EntityLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AttendanceManagementSystem.EntityLayer.dll": {}
         }
       },
       "AttendanceManagementSystem.Exceptions/1.0.0": {
@@ -498,6 +509,11 @@
       "path": "../AttendanceManagementSystem.DataAccessLayer/AttendanceManagementSystem.DataAccessLayer.csproj",
       "msbuildProject": "../AttendanceManagementSystem.DataAccessLayer/AttendanceManagementSystem.DataAccessLayer.csproj"
     },
+    "AttendanceManagementSystem.EntityLayer/1.0.0": {
+      "type": "project",
+      "path": "../AttendanceManagementSystem.EntityLayer/AttendanceManagementSystem.EntityLayer.csproj",
+      "msbuildProject": "../AttendanceManagementSystem.EntityLayer/AttendanceManagementSystem.EntityLayer.csproj"
+    },
     "AttendanceManagementSystem.Exceptions/1.0.0": {
       "type": "project",
       "path": "../AttendanceManagementSystem.Exceptions/AttendanceManagementSystem.Exceptions.csproj",
@@ -508,6 +524,7 @@
     ".NETCoreApp,Version=v3.1": [
       "AttendanceManagementSystem.BusinessLayer >= 1.0.0",
       "AttendanceManagementSystem.DataAccessLayer >= 1.0.0",
+      "AttendanceManagementSystem.EntityLayer >= 1.0.0",
       "AttendanceManagementSystem.Exceptions >= 1.0.0",
       "System.Data.SqlClient >= 4.8.2"
     ]
@@ -549,6 +566,9 @@
             },
             "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj": {
               "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.DataAccessLayer\\AttendanceManagementSystem.DataAccessLayer.csproj"
+            },
+            "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.EntityLayer\\AttendanceManagementSystem.EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.EntityLayer\\AttendanceManagementSystem.EntityLayer.csproj"
             },
             "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj": {
               "projectPath": "C:\\Users\\hp\\Desktop\\major project\\AttendanceAndLeaveManagementSystem\\AttendanceManagementSystemSolutions\\AttendanceManagementSystem.Exceptions\\AttendanceManagementSystem.Exceptions.csproj"
