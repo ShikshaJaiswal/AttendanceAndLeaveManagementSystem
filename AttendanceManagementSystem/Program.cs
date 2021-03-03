@@ -6,7 +6,7 @@ using System.Text;
 namespace AttendanceManagementSystem.PresentationLayer
 {
     
-    class Program
+    public class Program
     {
         
         static void Main(string[] args)

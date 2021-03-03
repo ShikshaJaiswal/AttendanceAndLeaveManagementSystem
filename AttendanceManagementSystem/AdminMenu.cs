@@ -9,31 +9,10 @@ using AttendanceManagementSystem.EntityLayer;
 namespace AttendanceManagementSystem.PresentationLayer
 {
 
-    class AdminMenu
+    public class AdminMenu
     {
 
-        public static AddEmployee_EL AddEmployeeInput()
-        {
-            Console.WriteLine("Enter EmpId, EmpName, EmpDesignation, EmpDOB, EmpAddress, MgrId, ProjectId to add record:");
-            AddEmployee_EL ae = new AddEmployee_EL();
-            ae.EmpId = Console.ReadLine();
-            ae.EmpName = Console.ReadLine();
-            ae.EmpDesignation = Console.ReadLine();
-            ae.EpmDOB = DateTime.Parse(Console.ReadLine());
-            ae.EmpAddress = Console.ReadLine();     
-            ae.MgrId = Console.ReadLine();
-            ae.ProjectId = Console.ReadLine();
-            return ae;
-
-        }
-        public static DelEmployee_EL DelEmployeeInput()
-        {
-            Console.WriteLine("Enter EmpId to delete record:");
-            DelEmployee_EL de = new DelEmployee_EL();
-            de.EmpId = Console.ReadLine();
-            return de;
-        }
-        
+       
         public static void DisplayMenu()
         {
             char ans = 'y';
@@ -63,7 +42,7 @@ namespace AttendanceManagementSystem.PresentationLayer
                                     AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.DeleteEmployee(DelEmployeeInput());
                                     break;
                                 case '3':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.UpdateEmployee();
+                                    AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.UpdateEmployee(UpdateEmployeeInput());
                                     break;
                             }
                             Console.WriteLine("Continue editing Employee Details (y/n)?");
@@ -154,5 +133,43 @@ namespace AttendanceManagementSystem.PresentationLayer
            
 
         }
+        public static AddEmployee_EL AddEmployeeInput()
+        {
+            Console.WriteLine("Enter EmpId, EmpName, EmpDesignation, EmpDOB, EmpAddress, MgrId, ProjectId to add record:");
+            AddEmployee_EL ae = new AddEmployee_EL();
+            ae.EmpId = Console.ReadLine();
+            ae.EmpName = Console.ReadLine();
+            ae.EmpDesignation = Console.ReadLine();
+            ae.EpmDOB = DateTime.Parse(Console.ReadLine());
+            ae.EmpAddress = Console.ReadLine();
+            ae.MgrId = Console.ReadLine();
+            ae.ProjectId = Console.ReadLine();
+            return ae;
+
+        }
+        public static DelEmployee_EL DelEmployeeInput()
+        {
+            Console.WriteLine("Enter EmpId to delete record:");
+            DelEmployee_EL de = new DelEmployee_EL();
+            de.EmpId = Console.ReadLine();
+            return de;
+        }
+
+        public static UpdateEmployee_EL UpdateEmployeeInput()
+        {
+            Console.WriteLine("Enter EmpId to update record:");
+            UpdateEmployee_EL ue = new UpdateEmployee_EL();
+            ue.EmpId = Console.ReadLine();
+            Console.WriteLine("Enter EmpName, EmpDesignation, EmpDOB, EmpAddress, MgrId, ProjectId to add record:");
+            ue.EmpName = Console.ReadLine();
+            ue.EmpDesignation = Console.ReadLine();
+            ue.EmpDOB = DateTime.Parse(Console.ReadLine());
+            ue.EmpAddress = Console.ReadLine();
+            ue.MgrId = Console.ReadLine();
+            ue.ProjectId = Console.ReadLine();
+            return ue;
+
+        }
+
     }
 }

@@ -93,6 +93,7 @@
       "AttendanceManagementSystem.BusinessLayer/1.0.0": {
         "dependencies": {
           "AttendanceManagementSystem.DataAccessLayer": "1.0.0",
+          "AttendanceManagementSystem.EntityLayer": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
         },
         "runtime": {

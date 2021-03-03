@@ -6,7 +6,7 @@ using AttendanceManagementSystem.Exceptions;
 
 namespace AttendanceManagementSystem.PresentationLayer
 {
-    class AdminOrEmployee
+    public class AdminOrEmployee
     {
         public static void AskAdminOrEmployee()
         {
@@ -15,11 +15,11 @@ namespace AttendanceManagementSystem.PresentationLayer
                 Console.WriteLine("Want to enter as Admin or Employee?");
                 string ans = Console.ReadLine();
 
-                if (ans == "Admin" || ans == "admin")
+                if (ans == "Admin" || ans == "admin" ||ans== "ADMIN")
                 {
                     AttendanceManagementSystem.PresentationLayer.Login.AdminLogin();
                 }
-                else if (ans == "Employee" || ans== "employee")
+                else if (ans == "Employee" || ans== "employee"|| ans== "EMPLOYEE")
                 {
                     AttendanceManagementSystem.PresentationLayer.Login.EmployeeLogin();
                 }

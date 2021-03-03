@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AttendanceManagementSystem.DataAccessLayer\AttendanceManagementSystem.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\AttendanceManagementSystem.EntityLayer\AttendanceManagementSystem.EntityLayer.csproj" />
   </ItemGroup>
 
 </Project>

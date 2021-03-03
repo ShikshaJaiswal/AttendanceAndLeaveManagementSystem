@@ -5,7 +5,7 @@ using AttendanceManagementSystem.Exceptions;
 
 namespace AttendanceManagementSystem.PresentationLayer
 {
-    class EmployeeMenu
+    public class EmployeeMenu
     {
         public static void DisplayMenu()
         {
