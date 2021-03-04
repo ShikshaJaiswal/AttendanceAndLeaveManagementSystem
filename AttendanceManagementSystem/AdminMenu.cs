@@ -59,13 +59,13 @@ namespace AttendanceManagementSystem.PresentationLayer
                             switch (EmpOption)
                             {
                                 case '1':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.AddProject();
+                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.AddProject(AddProjecInput());
                                     break;
                                 case '2':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.DeleteProject();
+                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.DeleteProject(DelProjectInput());
                                     break;
                                 case '3':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.UpdateProject();
+                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.UpdateProject(UpdateProjectInput());
                                     break;
                             }
                             Console.WriteLine("Continue editing Project Details (y/n)?");
@@ -74,7 +74,7 @@ namespace AttendanceManagementSystem.PresentationLayer
                         break;
 
                     case '3':
-                        AttendanceManagementSystem.DataAccessLayer.Admin_Employee_Project_Assign_Dal.AssignProject();                       
+                        AttendanceManagementSystem.DataAccessLayer.Admin_Employee_Project_Assign_Dal.AssignProject(AssignProjectInput());                       
                         break;
 
                     case '4':
@@ -137,13 +137,14 @@ namespace AttendanceManagementSystem.PresentationLayer
         {
             Console.WriteLine("Enter EmpId, EmpName, EmpDesignation, EmpDOB, EmpAddress, MgrId, ProjectId to add record:");
             AddEmployee_EL ae = new AddEmployee_EL();
-            ae.EmpId = Console.ReadLine();
+
             ae.EmpName = Console.ReadLine();
             ae.EmpDesignation = Console.ReadLine();
             ae.EpmDOB = DateTime.Parse(Console.ReadLine());
             ae.EmpAddress = Console.ReadLine();
-            ae.MgrId = Console.ReadLine();
-            ae.ProjectId = Console.ReadLine();
+            ae.MgrId = Convert.ToInt32( Console.ReadLine());
+            ae.ProjectId = Convert.ToInt32(Console.ReadLine());
+
             return ae;
 
         }
@@ -151,25 +152,73 @@ namespace AttendanceManagementSystem.PresentationLayer
         {
             Console.WriteLine("Enter EmpId to delete record:");
             DelEmployee_EL de = new DelEmployee_EL();
-            de.EmpId = Console.ReadLine();
+            de.EmpId = Convert.ToInt32(Console.ReadLine());
             return de;
         }
 
         public static UpdateEmployee_EL UpdateEmployeeInput()
         {
-            Console.WriteLine("Enter EmpId to update record:");
             UpdateEmployee_EL ue = new UpdateEmployee_EL();
-            ue.EmpId = Console.ReadLine();
+            Console.WriteLine("Enter EmpId to update record:");            
+            ue.EmpId = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter EmpName, EmpDesignation, EmpDOB, EmpAddress, MgrId, ProjectId to add record:");
             ue.EmpName = Console.ReadLine();
             ue.EmpDesignation = Console.ReadLine();
             ue.EmpDOB = DateTime.Parse(Console.ReadLine());
             ue.EmpAddress = Console.ReadLine();
-            ue.MgrId = Console.ReadLine();
-            ue.ProjectId = Console.ReadLine();
+            ue.MgrId = Convert.ToInt32(Console.ReadLine());
+            ue.ProjectId = Convert.ToInt32(Console.ReadLine());
             return ue;
 
         }
+
+        public static AssignProject_EL AssignProjectInput()
+        {
+            AssignProject_EL ap = new AssignProject_EL();
+            Console.WriteLine("Enter Employee id:");
+            ap.EmpId = Console.ReadLine();
+            Console.WriteLine("Enter project Id:");
+            ap.ProjectId = Console.ReadLine();
+            return ap;
+
+        }
+
+        public static AddProject_EL AddProjecInput()
+        {
+            AddProject_EL ape = new AddProject_EL();
+            
+            Console.WriteLine("Project Name");
+            ape.ProjName = Console.ReadLine();
+            Console.WriteLine("nter Technology");
+            ape.ProjectTechnology = Console.ReadLine();
+            Console.WriteLine("Enter StartDate");
+            ape.Startdate = DateTime.Parse(Console.ReadLine());
+            Console.WriteLine("Enter EndDate");
+            ape.Enddate = DateTime.Parse(Console.ReadLine());
+            return ape;
+        }
+        public static DelProject_EL DelProjectInput()
+        {
+            Console.WriteLine("Enter ProjectId to delete record:");
+            DelProject_EL dpe = new DelProject_EL();
+            dpe.ProjectId = Console.ReadLine();
+            return dpe;
+        }
+
+        public static UpdateProject_EL UpdateProjectInput()
+        {
+            Console.WriteLine("Enter ProjectId to update record:");
+            UpdateProject_EL upe = new UpdateProject_EL();
+            upe.ProjectId = Console.ReadLine();
+            Console.WriteLine("Enter ProjName, ProjectTechnology, Startdate, Enddate to add record:");
+            upe.ProjName = Console.ReadLine();
+            upe.ProjectTechnology = Console.ReadLine();
+            upe.Startdate = DateTime.Parse(Console.ReadLine());
+            upe.Enddate = DateTime.Parse(Console.ReadLine());
+            return upe;
+
+        }
+
 
     }
 }

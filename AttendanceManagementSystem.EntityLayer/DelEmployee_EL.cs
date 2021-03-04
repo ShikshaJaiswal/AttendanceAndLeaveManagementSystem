@@ -6,8 +6,8 @@ namespace AttendanceManagementSystem.EntityLayer
 {
     public class DelEmployee_EL
     {
-        private string empId;
-        public string EmpId
+        private int empId;
+        public int EmpId
         {
             get { return empId; }
             set { empId = value; }

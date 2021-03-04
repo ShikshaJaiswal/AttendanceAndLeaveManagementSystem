@@ -6,15 +6,15 @@ namespace AttendanceManagementSystem.EntityLayer
 {
     public class UpdateEmployee_EL
     {
-        private string empId;
-        private string mgrId;
+        private int empId;
+        private int mgrId;
         private string empDesignation;
         private string empName;
         private DateTime empDOB;
         private string empAddress;
-        private string projectId;
+        private int projectId;
 
-        public string EmpId
+        public int EmpId
         {
             get { return empId; }
             set { empId = value; }
@@ -25,12 +25,12 @@ namespace AttendanceManagementSystem.EntityLayer
             get { return empDesignation; }
             set { empDesignation = value; }
         }
-        public string MgrId
+        public int MgrId
         {
             get { return mgrId; }
             set { mgrId = value; }
         }
-        public string ProjectId
+        public int ProjectId
         {
             get { return projectId; }
             set { projectId = value; }

@@ -32,7 +32,7 @@ namespace AttendanceManagementSystem.PresentationLayer
                 if (Login_DAL.LoginDetailsAdmin(username, password))
                 {
                     Console.WriteLine("Admin Login Successful!");
-                    AttendanceManagementSystem.PresentationLayer.AdminMenu.DisplayMenu();
+                    AdminMenu.DisplayMenu();
                 }
                 else
                 {
@@ -60,7 +60,7 @@ namespace AttendanceManagementSystem.PresentationLayer
                 if (Login_DAL.LoginDetailsEmp(username, password))
                 {
                     Console.WriteLine("Employee Login Successful!");
-                    AttendanceManagementSystem.PresentationLayer.EmployeeMenu.DisplayMenu();
+                    EmployeeMenu.DisplayMenu();
                 }
                 else
                 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 
@@ -11,8 +12,13 @@ namespace AttendanceManagementSystem.DataAccessLayer
         public static bool LoginDetailsAdmin(string username, string password)
         {
 
-            SqlConnection conA = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=AttendanceAndLeaveManagementSystem;Integrated Security=True;");
-            SqlCommand cmd = new SqlCommand("select *from MgrLogin where UserName=@UserName and Pass=@Pass", conA);
+            SqlConnection conA = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=ALMS;Integrated Security=True;");
+            SqlCommand cmd = new SqlCommand
+            {
+                CommandText = "spManagerLogin",
+                Connection = conA,
+                CommandType = CommandType.StoredProcedure
+            };
             try
             {
                 conA.Open();
@@ -41,8 +47,13 @@ namespace AttendanceManagementSystem.DataAccessLayer
         {
 
 
-            SqlConnection conE = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=AttendanceAndLeaveManagementSystem;Integrated Security=True;");
-            SqlCommand cmd = new SqlCommand("select *from EmpLogin where UserName=@UserName and Pass=@Pass", conE);
+            SqlConnection conE = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=ALMS;Integrated Security=True;");
+            SqlCommand cmd = new SqlCommand
+            {
+                CommandText = "spEmployeeLogin",
+                Connection = conE,
+                CommandType = CommandType.StoredProcedure
+            };
             try
             {
 

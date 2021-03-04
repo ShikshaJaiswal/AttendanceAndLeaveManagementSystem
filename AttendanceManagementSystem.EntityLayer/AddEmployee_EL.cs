@@ -4,35 +4,25 @@ namespace AttendanceManagementSystem.EntityLayer
 {
     public class AddEmployee_EL
     {
-        private string empId;
-        private string mgrId;
+        
+        private int mgrId;
         private string empDesignation;
         private string empName;
         private DateTime empDOB;
         private string empAddress;
-        private string projectId;
-            
-        public string EmpId
-        {
-            get { return empId; }
-            set { empId = value; }
-        }
 
+        
         public string EmpDesignation
         {
             get { return empDesignation; }
             set { empDesignation = value; }
         }
-        public string MgrId
+        public int MgrId
         {
             get { return mgrId; }
             set { mgrId = value; }
         }
-        public string ProjectId
-        {
-            get { return projectId; }
-            set { projectId = value; }
-        }
+        public int ProjectId { get; set; }
         public string EmpName
         {
             get { return empName; }

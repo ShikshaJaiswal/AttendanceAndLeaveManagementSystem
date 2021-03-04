@@ -2,27 +2,32 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using AttendanceManagementSystem.EntityLayer;
+using System.Data;
 
 namespace AttendanceManagementSystem.DataAccessLayer
 {
     public class Admin_Project_Operations_DAL
     {
-        public static void AddProject()
+        public static void AddProject(AddProject_EL e)
         {
             //write code to add project in ProjectDetails
 
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=AttendanceAndLeaveManagementSystem;Integrated Security=True;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=ALMS;Integrated Security=True;"))
             {
-                SqlCommand cmd = new SqlCommand("insert into ProjectDetails values(@ProjectId,@ProjName,@ProjectTechnology,@Startdate,@Enddate)", con);
+                SqlCommand cmd = new SqlCommand
+                {
+                    CommandText = "spAddProject",
+                    Connection = con,
+                    CommandType = CommandType.StoredProcedure
+                };
 
                 //passing values to sql parameter
-                cmd.Parameters.AddWithValue("@ProjectId", Console.ReadLine());
-                cmd.Parameters.AddWithValue("@ProjName", Console.ReadLine());
-                cmd.Parameters.AddWithValue("@ProjectTechnology", Console.ReadLine());
-                cmd.Parameters.AddWithValue("@Startdate", Console.ReadLine());
-                cmd.Parameters.AddWithValue("@Enddate", Console.ReadLine());
-
-
+                
+                cmd.Parameters.AddWithValue("@ProjName", e.ProjName);
+                cmd.Parameters.AddWithValue("@ProjectTechnology", e.ProjectTechnology);
+                cmd.Parameters.AddWithValue("@Startdate", e.Startdate);
+                cmd.Parameters.AddWithValue("@Enddate", e.Enddate);
 
                 try
                 {
@@ -39,17 +44,20 @@ namespace AttendanceManagementSystem.DataAccessLayer
             }
 
         }
-        public static void DeleteProject()
+        public static void DeleteProject(DelProject_EL e)
         {
             //write code to delete project in ProjectDetails 
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=AttendanceAndLeaveManagementSystem;Integrated Security=True;"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=ALMS;Integrated Security=True;"))
                 {
-
-                    SqlCommand cmd = new SqlCommand("Delete from ProjectDetails where ProjectId= @ProjectId", con);
-                    Console.WriteLine("Enter ProjectId to delete record:");
-                    cmd.Parameters.AddWithValue("@ProjectId", Console.ReadLine());
+                    SqlCommand cmd = new SqlCommand
+                    {
+                        CommandText = "spDeleteProject",
+                        Connection = con,
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@ProjectId", e.ProjectId);
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -60,23 +68,27 @@ namespace AttendanceManagementSystem.DataAccessLayer
             }
         }
 
-        public static void UpdateProject()
+        public static void UpdateProject(UpdateProject_EL e)
         {
             //write code to edit project in ProjectDetails
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=AttendanceAndLeaveManagementSystem;Integrated Security=True;"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=ALMS;Integrated Security=True;"))
                 {
 
-                    SqlCommand cmd = new SqlCommand("Update ProjectDetails set ProjName=@ProjName,ProjectTechnology=@ProjectTechnology,Startdate=@Startdate,Enddate=@Enddate Where ProjectId=@ProjectId", con);
-                    Console.WriteLine("Enter ProjectId to update record:");
+                    SqlCommand cmd = new SqlCommand
+                    {
+                        CommandText = "spUpdateProject",
+                        Connection = con,
+                        CommandType = CommandType.StoredProcedure
+                    };
 
-                    cmd.Parameters.AddWithValue("@ProjectId", Console.ReadLine());
+                    cmd.Parameters.AddWithValue("@ProjectId", e.ProjectId);
 
-                    cmd.Parameters.AddWithValue("@ProjName", Console.ReadLine());
-                    cmd.Parameters.AddWithValue("@ProjectTechnology", Console.ReadLine());
-                    cmd.Parameters.AddWithValue("@Startdate", Console.ReadLine());
-                    cmd.Parameters.AddWithValue("@Enddate", Console.ReadLine());
+                    cmd.Parameters.AddWithValue("@ProjName", e.ProjName);
+                    cmd.Parameters.AddWithValue("@ProjectTechnology", e.ProjectTechnology);
+                    cmd.Parameters.AddWithValue("@Startdate", e.Startdate);
+                    cmd.Parameters.AddWithValue("@Enddate", e.Enddate);
 
 
                     con.Open();

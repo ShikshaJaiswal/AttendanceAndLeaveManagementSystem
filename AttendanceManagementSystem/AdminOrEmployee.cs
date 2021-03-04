@@ -17,11 +17,11 @@ namespace AttendanceManagementSystem.PresentationLayer
 
                 if (ans == "Admin" || ans == "admin" ||ans== "ADMIN")
                 {
-                    AttendanceManagementSystem.PresentationLayer.Login.AdminLogin();
+                    Login.AdminLogin();
                 }
                 else if (ans == "Employee" || ans== "employee"|| ans== "EMPLOYEE")
                 {
-                    AttendanceManagementSystem.PresentationLayer.Login.EmployeeLogin();
+                    Login.EmployeeLogin();
                 }
                 else
                 {
