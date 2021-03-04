@@ -19,7 +19,7 @@ namespace AttendanceManagementSystem.PresentationLayer
             do
             {
                 Console.WriteLine("Choose the option from the Menu:");
-                Console.WriteLine("1. Employee Information \n2. Project Information \n3. Assign project to employee \n4. View Pending leave requests \n5. View Project attendance");
+                Console.WriteLine("1. Employee Information \n2. Project Information \n3. View Pending leave requests \n4. View Project attendance");
                 char option = Convert.ToChar(Console.ReadLine());
 
 
@@ -73,11 +73,9 @@ namespace AttendanceManagementSystem.PresentationLayer
                         } while (selected == 'y' || ans == 'Y');
                         break;
 
-                    case '3':
-                        AttendanceManagementSystem.DataAccessLayer.Admin_Employee_Project_Assign_Dal.AssignProject(AssignProjectInput());                       
-                        break;
+                    
 
-                    case '4':
+                    case '3':
                         //code to display pending leave request table   
                         try
                         {
@@ -100,7 +98,7 @@ namespace AttendanceManagementSystem.PresentationLayer
                             Console.WriteLine(ex.Message);
                         }
                         break;
-                    case '5':
+                    case '4':
                         selected = 'y';
                         do
                         {
@@ -135,7 +133,7 @@ namespace AttendanceManagementSystem.PresentationLayer
         }
         public static AddEmployee_EL AddEmployeeInput()
         {
-            Console.WriteLine("Enter EmpId, EmpName, EmpDesignation, EmpDOB, EmpAddress, MgrId, ProjectId to add record:");
+            Console.WriteLine("Enter: EmpName, EmpDesignation, EmpDOB, EmpAddress, MgrId, ProjectId to add record:");
             AddEmployee_EL ae = new AddEmployee_EL();
 
             ae.EmpName = Console.ReadLine();
@@ -172,16 +170,7 @@ namespace AttendanceManagementSystem.PresentationLayer
 
         }
 
-        public static AssignProject_EL AssignProjectInput()
-        {
-            AssignProject_EL ap = new AssignProject_EL();
-            Console.WriteLine("Enter Employee id:");
-            ap.EmpId = Console.ReadLine();
-            Console.WriteLine("Enter project Id:");
-            ap.ProjectId = Console.ReadLine();
-            return ap;
-
-        }
+     
 
         public static AddProject_EL AddProjecInput()
         {
@@ -189,7 +178,7 @@ namespace AttendanceManagementSystem.PresentationLayer
             
             Console.WriteLine("Project Name");
             ape.ProjName = Console.ReadLine();
-            Console.WriteLine("nter Technology");
+            Console.WriteLine("Enter Technology");
             ape.ProjectTechnology = Console.ReadLine();
             Console.WriteLine("Enter StartDate");
             ape.Startdate = DateTime.Parse(Console.ReadLine());
