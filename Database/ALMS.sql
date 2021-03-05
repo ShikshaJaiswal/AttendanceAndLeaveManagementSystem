@@ -26,7 +26,6 @@ insert into ProjectDetails values('Review of Technical Design', 'Deep Learning',
 select * from ProjectDetails
 
 
-
 -- MANAGER DETAILS TABLE
 create table ManagerDetails(
 MgrId int IDENTITY(5001,1) PRIMARY KEY,

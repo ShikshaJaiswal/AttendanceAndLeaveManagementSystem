@@ -144,8 +144,21 @@ INSERT INTO EmpLogin VALUES(@UserName, @Pass);
 END
 GO
 
+
+Create Procedure spAddLeaveRequest
+@EmpId int ,
+@ReqStartDate datetime,
+@ReqEndDate datetime
+AS
+BEGIN
+Insert into LeaveRequest values (@EmpId, @ReqStartDate, @ReqEndDate)
+END
+GO
+
+
 select * from EmployeeDetails
 select * from ManagerDetails
 select * from EmpLogin
 select * from ProjectDetails
 select * from MgrLogin
+select * from LeaveRequest

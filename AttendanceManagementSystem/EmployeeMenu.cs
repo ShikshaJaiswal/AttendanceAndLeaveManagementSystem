@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AttendanceManagementSystem.EntityLayer;
 using AttendanceManagementSystem.Exceptions;
 
 namespace AttendanceManagementSystem.PresentationLayer
@@ -21,10 +22,10 @@ namespace AttendanceManagementSystem.PresentationLayer
                 {
                     case '1':
                         //Mark the person's attendance for today if he selects 1(Project Attendance)
-                        AttendanceManagementSystem.DataAccessLayer.EmployeeAttendanceUpdate_DAL.UpdateAttendaceOfEmployee();                        
+                        AttendanceManagementSystem.DataAccessLayer.EmployeeAttendanceUpdate_DAL.UpdateAttendaceOfEmployee();
                         break;
                     case '2':
-                        
+
                         char selected = 'y';
                         do
                         {
@@ -34,10 +35,10 @@ namespace AttendanceManagementSystem.PresentationLayer
                             switch (EmpOption)
                             {
                                 case '1':
-                                    AttendanceManagementSystem.DataAccessLayer.EmployeeLeaveRequestUpdate_DAL.AddLeaveRequest();
+                                    AttendanceManagementSystem.DataAccessLayer.EmployeeLeaveRequestUpdate_DAL.AddLeaveRequest(AddLeaveRequestInput());
                                     break;
                                 case '2':
-                                    AttendanceManagementSystem.DataAccessLayer.EmployeeLeaveRequestUpdate_DAL.DeleteLeaveRequest();
+                                    AttendanceManagementSystem.DataAccessLayer.EmployeeLeaveRequestUpdate_DAL.DeleteLeaveRequest(DelLeaveRequestInput());
                                     break;
                             }
                             Console.WriteLine("Continue editing Leave Requests (y/n)?");
@@ -53,9 +54,9 @@ namespace AttendanceManagementSystem.PresentationLayer
                         }
                         catch (AdminOrEmployeeException aoee)
                         {
-                           
+
                             Console.WriteLine(aoee.Message);
-                        }                       
+                        }
                         break;
 
                     case '4':
@@ -66,7 +67,7 @@ namespace AttendanceManagementSystem.PresentationLayer
                         }
                         catch (AdminOrEmployeeException aoee)
                         {
-                            
+
                             Console.WriteLine(aoee.Message);
                         }
                         break;
@@ -77,7 +78,35 @@ namespace AttendanceManagementSystem.PresentationLayer
             }
             while (ans == 'y' || ans == 'Y');
 
+
+
         }
-    
-}
+        public static AddLeaveRequest_EL AddLeaveRequestInput()
+        {
+            Console.WriteLine("Enter: EmpId, Leave Start Date, Leave End Date");
+            AddLeaveRequest_EL alr = new AddLeaveRequest_EL()
+            {
+                EmpId = int.Parse(Console.ReadLine()),
+                ReqStartDate = DateTime.Parse(Console.ReadLine()),
+                ReqEndDate = DateTime.Parse(Console.ReadLine()),
+
+            };
+
+            return alr;
+
+        }
+
+        public static DelLeaveRequest_EL DelLeaveRequestInput()
+        {
+            Console.WriteLine("Enter: EmpId");
+            DelLeaveRequest_EL dlr = new DelLeaveRequest_EL()
+            {
+                EmpId = int.Parse(Console.ReadLine()),
+
+            };
+            return dlr;
+        }
+    }
+
+
 }
