@@ -12,11 +12,10 @@ AS
 BEGIN
 	SET NOCOUNT OFF;
 	INSERT INTO EmployeeDetails VALUES(@EmpName, @EmpDesignation, @EmpDOB, @EmpAddress, @MgrId, @ProjectId);
+	
 END
 GO
-exec spAddEmployee  'Divya Shukla', '.NET', '1993-07-12', 'Lane24, Mumbai', 5010, 10
 
-select * from EmployeeDetails
 
 
 ---DELETE EMPLOYEE PROCEDURE
@@ -28,8 +27,9 @@ BEGIN
 	Delete from EmployeeDetails  where EmpId = @EmpId;
 END
 GO
-exec spDeleteEmployee 15021
-select * from EmployeeDetails
+
+
+
 
 --PROCEDURE TO UPDATE EMPLOYEE DETAILS
 CREATE PROCEDURE spUpdateEmployee
@@ -54,16 +54,7 @@ BEGIN
 END
 GO
 
-exec spUpdateEmployee
-@EmpId= 15020,
-@EmpName ='Rohan Jalan',
-@EmpDesignation='Python',
-@EmpDOB= '03/03/90',
-@EmpAddress='Lane20, Hyderabad',
-@MgrId= 5010,
-@ProjectId= 10
 
-select * from EmployeeDetails
 
 --PROCEDURE TO ADD PROJECT
 
@@ -80,10 +71,7 @@ SET NOCOUNT OFF;
 END
 GO
 
-exec spAddProject
- @ProjName='HUIHUI', @ProjectTechnology='SAP', @Startdate='12/30/21', @Enddate='01/31/22'
 
-select * from ProjectDetails
 
 --PROCEDURE TO DELETE PROJECT
 CREATE PROCEDURE spDeleteProject
@@ -94,8 +82,7 @@ BEGIN
 	Delete from ProjectDetails  where ProjectId = @ProjectId;
 END
 GO
-exec spDeleteProject 11
-select * from ProjectDetails
+
 
 
 
@@ -118,14 +105,7 @@ SET NOCOUNT OFF;
 END
 GO
 
-exec spUpdateProject
-@ProjectId=7,
-@ProjName='PostgreSQL',
-@ProjectTechnology='Salesforce',
-@Startdate='12/30/21',
-@Enddate='01/31/22'
 
-select * from ProjectDetails
 
 --PROCEDURE FOR MANAGER LOGIN
 
@@ -138,8 +118,8 @@ Select * from MgrLogin where UserName=@UserName and Pass=@Pass
 END
 GO
 
-select * from MgrLogin
-exec spManagerLogin 'CAPMGR5002', 'Pass5002'
+
+
 
 --PROCEDURE FOR EMPLOYEE LOGIN
 
@@ -151,5 +131,21 @@ BEGIN
 Select * from EmpLogin where UserName=@UserName and Pass=@Pass
 END
 GO
-exec spEmployeeLogin 'CAPG15001', 'Pass15001'
 
+
+
+
+create Procedure spAddNewLogin
+@UserName varchar(30) ,
+@Pass varchar(30)
+AS 
+BEGIN
+INSERT INTO EmpLogin VALUES(@UserName, @Pass);
+END
+GO
+
+select * from EmployeeDetails
+select * from ManagerDetails
+select * from EmpLogin
+select * from ProjectDetails
+select * from MgrLogin

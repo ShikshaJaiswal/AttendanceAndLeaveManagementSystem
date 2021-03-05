@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
 using AttendanceManagementSystem.EntityLayer;
+using AttendanceManagementSystem.DataAccessLayer;
 
 
 
@@ -11,8 +12,6 @@ namespace AttendanceManagementSystem.PresentationLayer
 
     public class AdminMenu
     {
-
-       
         public static void DisplayMenu()
         {
             char ans = 'y';
@@ -36,13 +35,15 @@ namespace AttendanceManagementSystem.PresentationLayer
                             {
                                 case '1':
                                                                          
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.AddEmployee(AddEmployeeInput());
+                                    Admin_Employee_DAL.AddEmployee(AddEmployeeInput());
+                                    AssignLoginToNewEmp_DAL.AssignLoginToNewEmp(AssignLoginToNewEmpInput());
+
                                     break;
                                 case '2':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.DeleteEmployee(DelEmployeeInput());
+                                    Admin_Employee_DAL.DeleteEmployee(DelEmployeeInput());
                                     break;
                                 case '3':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Employee_DAL.UpdateEmployee(UpdateEmployeeInput());
+                                    Admin_Employee_DAL.UpdateEmployee(UpdateEmployeeInput());
                                     break;
                             }
                             Console.WriteLine("Continue editing Employee Details (y/n)?");
@@ -59,13 +60,13 @@ namespace AttendanceManagementSystem.PresentationLayer
                             switch (EmpOption)
                             {
                                 case '1':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.AddProject(AddProjecInput());
+                                    Admin_Project_Operations_DAL.AddProject(AddProjecInput());
                                     break;
                                 case '2':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.DeleteProject(DelProjectInput());
+                                   Admin_Project_Operations_DAL.DeleteProject(DelProjectInput());
                                     break;
                                 case '3':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Operations_DAL.UpdateProject(UpdateProjectInput());
+                                   Admin_Project_Operations_DAL.UpdateProject(UpdateProjectInput());
                                     break;
                             }
                             Console.WriteLine("Continue editing Project Details (y/n)?");
@@ -105,17 +106,21 @@ namespace AttendanceManagementSystem.PresentationLayer
                             Console.WriteLine("Choose the option from the menu:");
                             Console.WriteLine("1. View attendance by date \n2. View attendance by week \n3. View attendance by month");
                             char EmpOption = Convert.ToChar(Console.ReadLine());
+                            Console.WriteLine("Enter Project Id:");
+                            int Pid=Convert.ToInt32(Console.ReadLine());
                             switch (EmpOption)
                             {
                                 case '1':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Attendance_DAL.ViewAttendanceByDate();
+
+                                   //Admin_Project_Attendance_DAL.ViewAttendanceByDate();
                                     break;
                                 case '2':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Attendance_DAL.ViewMonthlyAttendance();
+                                  // Admin_Project_Attendance_DAL.ViewMonthlyAttendance();
                                     break;
                                 case '3':
-                                    AttendanceManagementSystem.DataAccessLayer.Admin_Project_Attendance_DAL.ViewMonthlyAttendance();
+                                    // Admin_Project_Attendance_DAL.ViewMonthlyAttendance();
                                     break;
+                                                                 
                             }
                             Console.WriteLine("Continue editing Attendance Details (y/n)?");
                             selected = Convert.ToChar(Console.ReadLine());
@@ -134,23 +139,40 @@ namespace AttendanceManagementSystem.PresentationLayer
         public static AddEmployee_EL AddEmployeeInput()
         {
             Console.WriteLine("Enter: EmpName, EmpDesignation, EmpDOB, EmpAddress, MgrId, ProjectId to add record:");
-            AddEmployee_EL ae = new AddEmployee_EL();
-
-            ae.EmpName = Console.ReadLine();
-            ae.EmpDesignation = Console.ReadLine();
-            ae.EpmDOB = DateTime.Parse(Console.ReadLine());
-            ae.EmpAddress = Console.ReadLine();
-            ae.MgrId = Convert.ToInt32( Console.ReadLine());
-            ae.ProjectId = Convert.ToInt32(Console.ReadLine());
+            AddEmployee_EL ae = new AddEmployee_EL
+            {
+                EmpName = Console.ReadLine(),
+                EmpDesignation = Console.ReadLine(),
+                EpmDOB = DateTime.Parse(Console.ReadLine()),
+                EmpAddress = Console.ReadLine(),
+                MgrId = Convert.ToInt32(Console.ReadLine()),
+                ProjectId = Convert.ToInt32(Console.ReadLine())
+            };
 
             return ae;
 
         }
+
+        public static AssignLoginToNewEmp_EL AssignLoginToNewEmpInput()
+        {
+            
+
+            Console.WriteLine("Enter UserName and Password for this Employee");
+            AssignLoginToNewEmp_EL altne = new AssignLoginToNewEmp_EL
+            {
+                UserName = Console.ReadLine(),
+                Pass = Console.ReadLine()
+            };
+            return altne;
+        }
+
         public static DelEmployee_EL DelEmployeeInput()
         {
             Console.WriteLine("Enter EmpId to delete record:");
-            DelEmployee_EL de = new DelEmployee_EL();
-            de.EmpId = Convert.ToInt32(Console.ReadLine());
+            DelEmployee_EL de = new DelEmployee_EL
+            {
+                EmpId = Convert.ToInt32(Console.ReadLine())
+            };
             return de;
         }
 
@@ -189,8 +211,10 @@ namespace AttendanceManagementSystem.PresentationLayer
         public static DelProject_EL DelProjectInput()
         {
             Console.WriteLine("Enter ProjectId to delete record:");
-            DelProject_EL dpe = new DelProject_EL();
-            dpe.ProjectId = Console.ReadLine();
+            DelProject_EL dpe = new DelProject_EL
+            {
+                ProjectId = Console.ReadLine()
+            };
             return dpe;
         }
 
@@ -207,6 +231,8 @@ namespace AttendanceManagementSystem.PresentationLayer
             return upe;
 
         }
+
+       
 
 
     }

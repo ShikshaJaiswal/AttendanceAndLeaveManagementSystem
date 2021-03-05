@@ -1,5 +1,5 @@
-create database ALMS
-use ALMS
+create ALMS
+USE ALMS
 
 
 --PROJECT DETAILS TABLE
@@ -10,6 +10,7 @@ ProjectTechnology varchar(30),
 SDate datetime not null,
 EDate datetime not null
 )
+
 
 insert into ProjectDetails values('ExpenseTracker', 'Python','2021-02-01','2021-02-21')
 insert into ProjectDetails values('PropertyManagementSystem', 'JAVA', '2021-02-01','2021-02-21')
@@ -23,7 +24,6 @@ insert into ProjectDetails values('Evaluation of Quotations', 'Big Data','2021-0
 insert into ProjectDetails values('Review of Technical Design', 'Deep Learning','2021-02-01','2021-02-21')
 
 select * from ProjectDetails
-
 
 
 
@@ -97,32 +97,34 @@ select * from EmployeeDetails
 
 --EMPLOYEE LOGIN DETAILS TABLE
 create table EmpLogin(
-EmpId int foreign key references EmployeeDetails(EmpId),
+EmpId int IDENTITY(15001,1) foreign key references EmployeeDetails(EmpId),
 UserName varchar(30) not null,
 Pass varchar(30) not null
 )
 
 
-insert into EmpLogin values(15001,'CAPG15001','Pass15001')
-insert into EmpLogin values(15002,'CAPG15002','Pass15002')
-insert into EmpLogin values(15003,'CAPG15003','Pass15003')
-insert into EmpLogin values(15004,'CAPG15004','Pass15004')
-insert into EmpLogin values(15005,'CAPG15005','Pass15005')
-insert into EmpLogin values(15006,'CAPG15006','Pass15006')
-insert into EmpLogin values(15007,'CAPG15007','Pass15007')
-insert into EmpLogin values(15008,'CAPG15008','Pass15008')
-insert into EmpLogin values(15009,'CAPG15009','Pass15009')
-insert into EmpLogin values(15010,'CAPG15010','Pass15010')
-insert into EmpLogin values(15011,'CAPG15011','Pass15011')
-insert into EmpLogin values(15012,'CAPG15012','Pass15012')
-insert into EmpLogin values(15013,'CAPG15013','Pass15013')
-insert into EmpLogin values(15014,'CAPG15014','Pass15014')
-insert into EmpLogin values(15015,'CAPG15015','Pass15015')
-insert into EmpLogin values(15016,'CAPG15016','Pass15016')
-insert into EmpLogin values(15017,'CAPG15017','Pass15017')
-insert into EmpLogin values(15018,'CAPG15018','Pass15018')
-insert into EmpLogin values(15019,'CAPG15019','Pass15019')
-insert into EmpLogin values(15020,'CAPG15020','Pass15020')
+select * from EmpLogin
+
+insert into EmpLogin values('CAPG15001','Pass15001')
+insert into EmpLogin values('CAPG15002','Pass15002')
+insert into EmpLogin values('CAPG15003','Pass15003')
+insert into EmpLogin values('CAPG15004','Pass15004')
+insert into EmpLogin values('CAPG15005','Pass15005')
+insert into EmpLogin values('CAPG15006','Pass15006')
+insert into EmpLogin values('CAPG15007','Pass15007')
+insert into EmpLogin values('CAPG15008','Pass15008')
+insert into EmpLogin values('CAPG15009','Pass15009')
+insert into EmpLogin values('CAPG15010','Pass15010')
+insert into EmpLogin values('CAPG15011','Pass15011')
+insert into EmpLogin values('CAPG15012','Pass15012')
+insert into EmpLogin values('CAPG15013','Pass15013')
+insert into EmpLogin values('CAPG15014','Pass15014')
+insert into EmpLogin values('CAPG15015','Pass15015')
+insert into EmpLogin values('CAPG15016','Pass15016')
+insert into EmpLogin values('CAPG15017','Pass15017')
+insert into EmpLogin values('CAPG15018','Pass15018')
+insert into EmpLogin values('CAPG15019','Pass15019')
+insert into EmpLogin values('CAPG15020','Pass15020')
 
 select * from EmpLogin
 
@@ -135,6 +137,9 @@ MgrId int foreign key references ManagerDetails(MgrId),
 UserName varchar(30) not null,
 Pass varchar(30) not null
 )
+
+
+
 insert into MgrLogin values(5001, 'CAPMGR5001','Pass5001')
 insert into MgrLogin values(5002, 'CAPMGR5002','Pass5002')
 insert into MgrLogin values(5003, 'CAPMGR5003','Pass5003')
@@ -165,7 +170,6 @@ insert into LeaveRequest values(15015,'02/18/21','02/21/21','Acceped')
 insert into LeaveRequest values(15018,'02/24/21','02/27/21',default)
 
 select * from LeaveRequest
-
 
 
 --ATTENDANCE DETAILS TABLE
