@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using AttendanceManagementSystem.EntityLayer;
 using AttendanceManagementSystem.Exceptions;
+using AttendanceManagementSystem.DataAccessLayer;
 
 namespace AttendanceManagementSystem.PresentationLayer
 {
@@ -14,7 +15,7 @@ namespace AttendanceManagementSystem.PresentationLayer
             do
             {
                 Console.WriteLine("Choose the option from the Menu:");
-                Console.WriteLine("1. Project Attendance \n2. Leave Requests \n3. View Attendance \n4. Update leave requests");
+                Console.WriteLine("1. Project Attendance \n2. Leave Requests \n3. View Attendance ");
                 char option = Convert.ToChar(Console.ReadLine());
 
 
@@ -35,10 +36,10 @@ namespace AttendanceManagementSystem.PresentationLayer
                             switch (EmpOption)
                             {
                                 case '1':
-                                    AttendanceManagementSystem.DataAccessLayer.EmployeeLeaveRequestUpdate_DAL.AddLeaveRequest(AddLeaveRequestInput());
+                                    EmployeeLeaveRequestUpdate_DAL.AddLeaveRequest(AddLeaveRequestInput());
                                     break;
                                 case '2':
-                                    AttendanceManagementSystem.DataAccessLayer.EmployeeLeaveRequestUpdate_DAL.DeleteLeaveRequest(DelLeaveRequestInput());
+                                   EmployeeLeaveRequestUpdate_DAL.DeleteLeaveRequest(DelLeaveRequestInput());
                                     break;
                             }
                             Console.WriteLine("Continue editing Leave Requests (y/n)?");
@@ -59,18 +60,6 @@ namespace AttendanceManagementSystem.PresentationLayer
                         }
                         break;
 
-                    case '4':
-                        // code to catch exception since user isn't admin
-                        try
-                        {
-                            throw new AdminOrEmployeeException("Only Managers have the permission to view this!");
-                        }
-                        catch (AdminOrEmployeeException aoee)
-                        {
-
-                            Console.WriteLine(aoee.Message);
-                        }
-                        break;
 
                 }
                 Console.WriteLine("Continue with Employee Menu (y/n)?");

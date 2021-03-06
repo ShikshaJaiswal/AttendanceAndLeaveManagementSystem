@@ -144,14 +144,34 @@ INSERT INTO EmpLogin VALUES(@UserName, @Pass);
 END
 GO
 
-
+---STORED PROCEDURE TO ADD LEAVE REQUEST
 Create Procedure spAddLeaveRequest
 @EmpId int ,
 @ReqStartDate datetime,
-@ReqEndDate datetime
+@ReqEndDate datetime,
+@ReqStatus as varchar(10) = 'Pending'
 AS
 BEGIN
-Insert into LeaveRequest values (@EmpId, @ReqStartDate, @ReqEndDate)
+Insert into LeaveRequest values (@EmpId, @ReqStartDate, @ReqEndDate, @ReqStatus)
+END
+GO
+
+---STORED PROCEDURE TO DELETE LEAVE REQUEST
+Create Procedure spDelLeaveRequest
+@EmpId int
+AS
+BEGIN
+Delete from LeaveRequest  where EmpId = @EmpId;
+END
+GO
+
+
+---STORED PROCEDURE TO VIEW PENDING LEAVE REQUEST
+Create Procedure spViewLeaveRequest
+@ReqStatus varchar(10)
+AS
+BEGIN
+select * from LeaveRequest where @ReqStatus = @ReqStatus
 END
 GO
 

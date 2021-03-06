@@ -11,7 +11,7 @@ namespace AttendanceManagementSystem.DataAccessLayer
     {
         public static void AddLeaveRequest(AddLeaveRequest_EL e)
         {
-            //write code to update column statusOfRequest column in LeaveRequests
+            
             using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=ALMS;Integrated Security=True;"))
             {
                 SqlCommand cmd = new SqlCommand
@@ -44,7 +44,7 @@ namespace AttendanceManagementSystem.DataAccessLayer
 
         public static void DeleteLeaveRequest(DelLeaveRequest_EL e)
         {
-            //write code to update column statusOfRequest column in LeaveRequests
+            
             using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=ALMS;Integrated Security=True;"))
             {
                 SqlCommand cmd = new SqlCommand

@@ -42,7 +42,7 @@ namespace AttendanceManagementSystem.PresentationLayer
         public static void EmployeeLogin()
         {
             // write code to enable employee login and validate in business layer
-            Console.WriteLine(" Enter Username:");
+            Console.WriteLine("Enter Username:");
             string username = Console.ReadLine();
             Console.WriteLine("Enter Password:");
             string password = Console.ReadLine();

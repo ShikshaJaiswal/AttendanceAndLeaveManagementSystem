@@ -77,48 +77,30 @@ namespace AttendanceManagementSystem.PresentationLayer
                     
 
                     case '3':
-                        //code to display pending leave request table   
-                        try
-                        {
-                            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8HC3KF0;Initial Catalog=AttendanceAndLeaveManagementSystem;Integrated Security=True;"))
-                            {
-                                SqlCommand cmd = new SqlCommand("Select * from LeaveRequest where ReqStatus= 'Pending'", con);
-                                con.Open();
-                                SqlDataReader dr = cmd.ExecuteReader();
-                                if (dr.HasRows)
-                                {
-                                    while (dr.Read())
-                                    {
-                                        Console.WriteLine("EmpId:{0} EmpName:{1} ReqStartDate:{2} ReqEndDate:{3} ReqStatus:{4}", dr["EmpId"], dr["EmpName"], dr["ReqStartDate"], dr["ReqEndDate"], dr["ReqStatus"]);
-                                    }
-                                }
-                            }
-                        }
-                        catch (SqlException ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
+                        //code to display leave request table  
+                        Console.WriteLine("Following are the pending leave requests:");
+                        AdminViewLeaveRequest_DAL.AdminViewLeaveRequest();
+                        UpdatePendingLeaveRequest_DAL.UpdatePendingLeaveRequest(UpdatePendingLeaveRequestInput());
+
                         break;
                     case '4':
                         selected = 'y';
                         do
                         {
                             Console.WriteLine("Choose the option from the menu:");
-                            Console.WriteLine("1. View attendance by date \n2. View attendance by week \n3. View attendance by month");
-                            char EmpOption = Convert.ToChar(Console.ReadLine());
-                            Console.WriteLine("Enter Project Id:");
-                            int Pid=Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("1. View attendance by date \n2. View attendance of last week \n3. View attendance of last month");
+                            char EmpOption = Convert.ToChar(Console.ReadLine());                            
                             switch (EmpOption)
                             {
                                 case '1':
 
-                                   //Admin_Project_Attendance_DAL.ViewAttendanceByDate();
+                                   Admin_Project_Attendance_DAL.ViewAttendanceByDate(ViewAttendanceByDateInput());
                                     break;
                                 case '2':
-                                  // Admin_Project_Attendance_DAL.ViewMonthlyAttendance();
+                                  Admin_Project_Attendance_DAL.ViewWeeklyAttendance();
                                     break;
                                 case '3':
-                                    // Admin_Project_Attendance_DAL.ViewMonthlyAttendance();
+                                    Admin_Project_Attendance_DAL.ViewMonthlyAttendance();
                                     break;
                                                                  
                             }
@@ -231,11 +213,24 @@ namespace AttendanceManagementSystem.PresentationLayer
             return upe;
 
         }
+        public static ViewAttendanceByDate_EL ViewAttendanceByDateInput()
+        {
+            Console.WriteLine("Enter the date (mm/dd/yy) to view attedance:");
+            ViewAttendanceByDate_EL vtbd = new ViewAttendanceByDate_EL();
+            vtbd.AttendanceDate = DateTime.Parse(Console.ReadLine());
+            return vtbd;
+        }
 
-       
+        public static UpdatePendingLeaveRequest_EL UpdatePendingLeaveRequestInput()
+        {
+            Console.WriteLine("Update the pending request?");
+            UpdatePendingLeaveRequest_EL uplr = new UpdatePendingLeaveRequest_EL();
+            Console.WriteLine("Enter Id:");
+            uplr.EmpId = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Updated Status: Accepted/Rejected");
+            uplr.ReqStatus = Console.ReadLine();
 
-
-
-
+            return uplr;
+        }
     }
 }
