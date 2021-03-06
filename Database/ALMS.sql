@@ -157,8 +157,8 @@ select * from MgrLogin
 -- LEAVE REQUEST DETAILS TABLE
 create table LeaveRequest(
 EmpId int foreign key references EmployeeDetails(EmpId),
-ReqStartDate datetime NOT NULL,
-ReqEndDate datetime NOT NULL,
+ReqStartDate date NOT NULL,
+ReqEndDate date NOT NULL,
 ReqStatus varchar(10) NOT NULL default 'Pending'
 )
 
@@ -178,7 +178,7 @@ EmpId int foreign key references EmployeeDetails(EmpId),
 AttendanceDate date not null,
 AttendanceStatus varchar(1)  not null
 )
-
+select * from Attendance
 insert into Attendance values(15001,'2021-02-01','A')
 insert into Attendance values(15002,'2021-02-01','A')
 insert into Attendance values(15003,'2021-02-01','A')
@@ -558,7 +558,7 @@ insert into Attendance values(15017,'2021-02-24','P')
 insert into Attendance values(15018,'2021-02-24','A')
 insert into Attendance values(15019,'2021-02-24','A')
 insert into Attendance values(15020,'2021-02-24','A')
-
+select * from Attendance
 insert into Attendance values(15001,'2021-02-25','A')
 insert into Attendance values(15002,'2021-02-25','P')
 insert into Attendance values(15003,'2021-02-25','P')
@@ -579,6 +579,7 @@ insert into Attendance values(15017,'2021-02-25','P')
 insert into Attendance values(15018,'2021-02-25','P')
 insert into Attendance values(15019,'2021-02-25','A')
 insert into Attendance values(15020,'2021-02-25','A')
+select * from Attendance
 
 insert into Attendance values(15001,'2021-02-26','A')
 insert into Attendance values(15002,'2021-02-26','A')

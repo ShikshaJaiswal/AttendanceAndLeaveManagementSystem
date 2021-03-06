@@ -129,17 +129,17 @@ Create Procedure spEmployeeLogin
 @UserName varchar(30) ,
 @Pass varchar(30),
 @AttendanceDate date=' ',
-@AttendanceStatus varchar(1)=' ' 
+@AttendanceStatus varchar(1)='A' 
 AS 
 BEGIN
 Select * from EmpLogin where EmpId=@EmpId and UserName=@UserName and Pass=@Pass
 if @AttendanceDate = ' ' set @AttendanceDate= GETDATE()
-if @AttendanceStatus = ' ' set @AttendanceStatus= 'P'
+if @AttendanceStatus = 'A' set @AttendanceStatus= 'P'
 insert into Attendance values (@EmpId, @AttendanceDate, @AttendanceStatus)
 end
 GO
 
-exec spEmployeeLogin 15003, 'CAPG15003', 'Pass15003'
+exec spEmployeeLogin 15008, 'CAPG15008', 'Pass15008'
 
 
 select * from Attendance
@@ -158,15 +158,28 @@ GO
 ---STORED PROCEDURE TO ADD LEAVE REQUEST
 Create Procedure spAddLeaveRequest
 @EmpId int ,
-@ReqStartDate datetime,
-@ReqEndDate datetime,
-@ReqStatus as varchar(10) = 'Pending'
+@ReqStartDate date,
+@ReqEndDate date,
+@ReqStatus as varchar(10) = 'Pending',
+@AttendanceDate date = @ReqStartDate,
+@AttendanceStatus varchar(1)= ' '
 AS
 BEGIN
 Insert into LeaveRequest values (@EmpId, @ReqStartDate, @ReqEndDate, @ReqStatus)
+if @AttendanceStatus = ' ' set @AttendanceStatus= 'A'
+while(@AttendanceDate<@ReqEndDate)
+	Begin		
+	insert into Attendance values (@EmpId, @AttendanceDate, @AttendanceStatus)
+	set @AttendanceDate= DATEADD(DAY, 1,@AttendanceDate)
+	end
+	
 END
 GO
 
+
+
+select * from LeaveRequest
+select * from Attendance
 ---STORED PROCEDURE TO DELETE LEAVE REQUEST
 Create Procedure spDelLeaveRequest
 @EmpId int
@@ -194,6 +207,7 @@ create procedure spUpdatePendingLeaveRequest
 as
 begin
 update LeaveRequest set ReqStatus = @ReqStatus where EmpId= @EmpId
+
 end
 go
 
@@ -230,6 +244,7 @@ go
 
 exec ViewAttendanceByMonth
 
+create procedure spAddDefaultAttendance
 
 
 select * from Attendance
