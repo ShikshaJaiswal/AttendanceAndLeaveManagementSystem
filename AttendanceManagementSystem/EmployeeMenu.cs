@@ -15,17 +15,14 @@ namespace AttendanceManagementSystem.PresentationLayer
             do
             {
                 Console.WriteLine("Choose the option from the Menu:");
-                Console.WriteLine("1. Project Attendance \n2. Leave Requests \n3. View Attendance ");
+                Console.WriteLine("1. Leave Requests \n2. View Attendance ");
                 char option = Convert.ToChar(Console.ReadLine());
 
 
                 switch (option)
                 {
+                    
                     case '1':
-                        //Mark the person's attendance for today if he selects 1(Project Attendance)
-                        AttendanceManagementSystem.DataAccessLayer.EmployeeAttendanceUpdate_DAL.UpdateAttendaceOfEmployee();
-                        break;
-                    case '2':
 
                         char selected = 'y';
                         do
@@ -47,7 +44,7 @@ namespace AttendanceManagementSystem.PresentationLayer
                         } while (selected == 'y' || ans == 'Y');
                         break;
 
-                    case '3':
+                    case '2':
                         // code to catch exception since user isn't admin
                         try
                         {

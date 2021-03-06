@@ -6,8 +6,15 @@ namespace AttendanceManagementSystem.EntityLayer
 {
     public class LoginEmployee_EL
     {
+        private int empId;
         private string username;
         private string pass;
+        
+        public int EmpId
+        {
+            get { return empId; }
+            set { empId = value; }
+        }
         public string UserName
         {
             get { return username; }

@@ -18,6 +18,7 @@ GO
 
 
 
+
 ---DELETE EMPLOYEE PROCEDURE
 CREATE PROCEDURE spDeleteEmployee
 	@EmpId int
@@ -124,14 +125,24 @@ GO
 --PROCEDURE FOR EMPLOYEE LOGIN
 
 Create Procedure spEmployeeLogin
+@EmpId int,
 @UserName varchar(30) ,
-@Pass varchar(30)
+@Pass varchar(30),
+@AttendanceDate date=' ',
+@AttendanceStatus varchar(1)=' ' 
 AS 
 BEGIN
-Select * from EmpLogin where UserName=@UserName and Pass=@Pass
-END
+Select * from EmpLogin where EmpId=@EmpId and UserName=@UserName and Pass=@Pass
+if @AttendanceDate = ' ' set @AttendanceDate= GETDATE()
+if @AttendanceStatus = ' ' set @AttendanceStatus= 'P'
+insert into Attendance values (@EmpId, @AttendanceDate, @AttendanceStatus)
+end
 GO
 
+exec spEmployeeLogin 15003, 'CAPG15003', 'Pass15003'
+
+
+select * from Attendance
 
 
 
@@ -168,12 +179,62 @@ GO
 
 ---STORED PROCEDURE TO VIEW PENDING LEAVE REQUEST
 Create Procedure spViewLeaveRequest
-@ReqStatus varchar(10)
 AS
 BEGIN
-select * from LeaveRequest where @ReqStatus = @ReqStatus
+select * from LeaveRequest where ReqStatus = 'Pending'
 END
 GO
+exec spViewLeaveRequest
+
+
+
+create procedure spUpdatePendingLeaveRequest
+@EmpId int,
+@ReqStatus varchar(10)
+as
+begin
+update LeaveRequest set ReqStatus = @ReqStatus where EmpId= @EmpId
+end
+go
+
+
+create procedure ViewAttendanceByDate
+@AttendanceDate date
+as
+begin
+select * from Attendance where AttendanceDate= @AttendanceDate
+ 
+end
+go
+
+
+
+
+
+create procedure ViewAttendanceByWeek
+as
+begin
+select * from Attendance where AttendanceDate>= DATEADD(dd,-7,getdate()) 
+end
+go
+
+exec ViewAttendanceByWeek
+
+
+create procedure ViewAttendanceByMonth
+as
+begin
+select * from Attendance where AttendanceDate>=DATEADD(dd,-30,getdate()) 
+end
+go
+
+exec ViewAttendanceByMonth
+
+
+
+select * from Attendance
+
+SELECT * FROM EmpLogin
 
 
 select * from EmployeeDetails
@@ -182,3 +243,4 @@ select * from EmpLogin
 select * from ProjectDetails
 select * from MgrLogin
 select * from LeaveRequest
+select * from Attendance

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using AttendanceManagementSystem.DataAccessLayer;
 using AttendanceManagementSystem.Exceptions;
+using AttendanceManagementSystem.EntityLayer;
 
 
 
@@ -41,16 +42,19 @@ namespace AttendanceManagementSystem.PresentationLayer
 
         public static void EmployeeLogin()
         {
-            // write code to enable employee login and validate in business layer
+            Console.WriteLine("Enter Employee Id");
+            int EmpId = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Username:");
             string username = Console.ReadLine();
             Console.WriteLine("Enter Password:");
             string password = Console.ReadLine();
             try
             {
-                if (Login_DAL.LoginDetailsEmp(username, password))
+                if (Login_DAL.LoginDetailsEmp(EmpId, username, password))
                 {
                     Console.WriteLine("Employee Login Successful!");
+
+                   
                     EmployeeMenu.DisplayMenu();
                 }
                 else
@@ -64,6 +68,8 @@ namespace AttendanceManagementSystem.PresentationLayer
                 Console.WriteLine(le.Message);
 
             }
+
         }
+        
     }
 }

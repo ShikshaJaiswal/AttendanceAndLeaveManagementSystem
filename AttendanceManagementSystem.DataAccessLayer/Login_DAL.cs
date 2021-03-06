@@ -43,7 +43,7 @@ namespace AttendanceManagementSystem.DataAccessLayer
             }
 
         }
-        public static bool LoginDetailsEmp(string username, string password)
+        public static bool LoginDetailsEmp(int EmpId, string username, string password)
         {
 
 
@@ -58,6 +58,7 @@ namespace AttendanceManagementSystem.DataAccessLayer
             {
 
                 conE.Open();
+                cmd.Parameters.AddWithValue("@EmpId", EmpId);
                 cmd.Parameters.AddWithValue("@UserName", username);
                 cmd.Parameters.AddWithValue("@Pass", password);
                 SqlDataReader dr = cmd.ExecuteReader();
